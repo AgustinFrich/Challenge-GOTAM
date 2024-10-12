@@ -3,7 +3,7 @@ services:
     build:
       context: ./challenge-gotam-front
     ports:
-      - "4200"
+      - "4200:80"
     networks:
       - app-network
     depends_on:
@@ -13,11 +13,12 @@ services:
     build:
       context: ./challenge-gotam-server
     environment:
-      - DB_HOST=mysql
-      - DB_PORT=3306
-      - DB_USERNAME=root
-      - DB_PASSWORD=rootpassword
-      - DB_DATABASE=mydb
+      - DATABASE_HOST=mysql
+      - DATABASE_PORT=3306
+      - DATABASE_USER=root
+      - DATABASE_PASSWORD=rootpassword
+      - DATABASE_NAME=mydb
+      - DATABASE_SYNCHRONIZE=true
     ports:
       - "3000:3000"
     networks:
@@ -31,9 +32,7 @@ services:
       MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_DATABASE: mydb
     ports:
-      - "3306:3306"
-      - "3307:3307"
-      - "3308:3308"
+      - "3307:3306"
     volumes:
       - mysql-data:/var/lib/mysql
     networks:
