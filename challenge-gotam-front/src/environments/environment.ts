@@ -1,1 +1,1 @@
-export const environment = { API_URL: 'http://localhost', API_PORT: '3000' };
+export const environment = { API_URL: 'https://challenge-gotam-front.vercel.app/', API_PORT: '' };
