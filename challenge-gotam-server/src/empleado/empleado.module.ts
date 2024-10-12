@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { EmpleadoService } from './empleado.service';
 import { EmpleadoController } from './empleado.controller';
-import { databaseProviders } from 'src/providers/db.providers';
+import { databaseProviders } from '../providers/db.providers';
 
 @Module({
   controllers: [EmpleadoController],

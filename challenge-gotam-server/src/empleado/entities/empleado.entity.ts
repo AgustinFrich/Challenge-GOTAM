@@ -6,7 +6,7 @@ import {
   JoinColumn,
   ManyToOne,
 } from 'typeorm';
-import { Area } from 'src/area/entities/area.entity';
+import { Area } from '../../area/entities/area.entity';
 
 /*
       Cada empleado deberá tener:

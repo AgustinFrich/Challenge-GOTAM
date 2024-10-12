@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { Area } from 'src/area/entities/area.entity';
+import { Area } from '../../area/entities/area.entity';
 
 export class CreateEmpleadoDto {
   @ApiProperty()
