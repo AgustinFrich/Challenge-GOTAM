@@ -25,6 +25,7 @@ services:
       - app-network
     depends_on:
       - mysql
+    restart: always
 
   mysql:
     image: mysql:8.0
