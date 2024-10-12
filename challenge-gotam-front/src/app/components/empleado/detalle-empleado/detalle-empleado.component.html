@@ -1,0 +1,32 @@
+@if (empleado) {
+<div class="container">
+  <h1>Detalle del empleado</h1>
+
+  <div class="card">
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <h2 class="card-title">{{ empleado.nombre }}</h2>
+        </li>
+        <li class="list-group-item">
+          <h4 class="card-text">Datos:</h4>
+          <ul>
+            <li>Nacido en: {{ empleado.fechaDeNacimiento | date }}</li>
+            <li>
+              {{
+                empleado.esDesarrollador
+                  ? "Es desarrollador"
+                  : "No es desarrollador "
+              }}
+            </li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <h4>Descripción:</h4>
+          <p>{{ empleado.descripcion }}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+}

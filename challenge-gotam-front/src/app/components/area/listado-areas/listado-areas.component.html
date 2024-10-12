@@ -1,0 +1,31 @@
+<h1>Listado de áreas</h1>
+<div id="listado-areas">
+  <table class="table table-bordered table-striped text-center">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(area of this.listadoAreas; track area.id){
+      <tr>
+        <th scope="row">{{ area.id }}</th>
+        <td>{{ area.nombre }}</td>
+        <td>
+          <button class="btn btn-info me-2" (click)="seleccionarArea(area)">
+            Seleccionar
+          </button>
+          @if(puedeEliminar){
+
+          <button class="btn btn-danger me-2" (click)="eliminarArea(area)">
+            Eliminar
+          </button>
+          }
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

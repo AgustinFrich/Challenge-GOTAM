@@ -1,0 +1,11 @@
+<section class="container">
+  <app-listado-areas
+    (areaSeleccionada)="seleccionarArea($event)"
+    [puedeEliminar]="true"
+  ></app-listado-areas>
+</section>
+
+<hr />
+<section class="container mt-4">
+  <app-modificar-area></app-modificar-area>
+</section>

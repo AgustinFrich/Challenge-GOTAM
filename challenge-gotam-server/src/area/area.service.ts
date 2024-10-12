@@ -30,7 +30,7 @@ export class AreaService {
 
   update(id: number, updateAreaDto: UpdateAreaDto) {
     const repository = this.dbConnection.getRepository(Area);
-    return repository.update({ id: id }, { nombre: updateAreaDto.nombre });
+    return repository.update({ id: id }, { ...updateAreaDto });
   }
 
   remove(id: number) {

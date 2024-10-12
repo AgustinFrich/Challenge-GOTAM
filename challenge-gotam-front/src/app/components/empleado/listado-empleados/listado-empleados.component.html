@@ -1,0 +1,36 @@
+<h1>Listado de Empleados</h1>
+<div id="listado-empleados">
+  <table class="table table-bordered table-striped text-center">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Fecha de nacimiento</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(empleado of this.listadoEmpleados; track empleado.id){
+      <tr>
+        <th scope="row">{{ empleado.id }}</th>
+        <td>{{ empleado.nombre }}</td>
+        <td>{{ empleado.fechaDeNacimiento | date }}</td>
+        <td>
+          <button
+            class="btn btn-info me-2"
+            (click)="seleccionarEmpleado(empleado)"
+          >
+            Ver detalles
+          </button>
+          <button
+            class="btn btn-danger me-2"
+            (click)="eliminarEmpleado(empleado)"
+          >
+            Eliminar
+          </button>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

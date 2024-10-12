@@ -27,12 +27,13 @@ export class EmpleadoService {
       where: {
         id: id,
       },
+      relations: ['area'],
     });
   }
 
   update(id: number, updateEmpleadoDto: UpdateEmpleadoDto) {
     const repository = this.dbConnection.getRepository(Empleado);
-    return repository.update({ id: id }, { nombre: updateEmpleadoDto.nombre });
+    return repository.update({ id: id }, { ...updateEmpleadoDto });
   }
 
   remove(id: number) {

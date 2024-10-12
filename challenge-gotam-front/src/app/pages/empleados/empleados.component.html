@@ -1,0 +1,23 @@
+<section class="container">
+  <app-listado-empleados
+    [listadoEmpleados]="listadoEmpleados"
+    (empleadoSeleccionado)="seleccionarEmpleado($event)"
+    (recargarListado)="traerEmpleados()"
+  ></app-listado-empleados>
+</section>
+<hr />
+<section class="container">
+  <div class="row">
+    <div class="col-6">
+      <app-detalle-empleado
+        [empleado]="empleadoSeleccionado"
+      ></app-detalle-empleado>
+    </div>
+    <div class="col-6">
+      <app-modificar-empleado
+        [empleado]="empleadoSeleccionado"
+        (recargarListado)="traerEmpleados()"
+      ></app-modificar-empleado>
+    </div>
+  </div>
+</section>

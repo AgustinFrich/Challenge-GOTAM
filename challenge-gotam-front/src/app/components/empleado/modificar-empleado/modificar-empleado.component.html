@@ -1,0 +1,71 @@
+@if (empleado) {
+<div class="ps-4 pe-4">
+  <form class="form" [formGroup]="formGroup" (ngSubmit)="modificar()">
+    <h1>Modificar Empleado</h1>
+    <div class="mb-3">
+      <label for="nombre-empleado" class="form-label">Nombres y apellido</label>
+      <input
+        type="text"
+        id="nombre-empleado"
+        class="form-control"
+        name="nombre"
+        formControlName="nombre"
+      />
+      <div class="error">
+        @if(formGroup.controls["nombre"].touched &&
+        formGroup.controls["nombre"].invalid){
+        <small>Escriba sus nombres, solo letas, entre 8 y 50 caractéres</small>
+        }
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="fechaDeNacimiento" class="form-label"
+        >Fecha de nacimiento</label
+      >
+      <input
+        type="date"
+        id="fechaDeNacimiento"
+        name="fechaDeNacimiento"
+        class="form-control"
+        formControlName="fechaDeNacimiento"
+      />
+      <div class="error">
+        @if(formGroup.controls["fechaDeNacimiento"].touched &&
+        formGroup.controls["fechaDeNacimiento"].invalid){
+        <small>Escriba su fecha de nacimiento</small>
+        }
+      </div>
+    </div>
+    <div class="mb-3">
+      <input
+        type="checkbox"
+        id="esDesarrollador"
+        class="form-check-input"
+        name="esDesarrollador"
+        formControlName="esDesarrollador"
+      />
+      <label for="esDesarrollador" class="ms-3 form-check-label"
+        >¿Sos desarrollador?</label
+      >
+    </div>
+    <div class="mb-3">
+      <label for="descripcion" class="form-label">Descripción</label>
+      <textarea
+        rows="5"
+        id="descripcion"
+        name="descripcion"
+        class="form-control"
+        formControlName="descripcion"
+      ></textarea>
+      <div class="error">
+        @if(formGroup.controls["descripcion"].touched &&
+        formGroup.controls["descripcion"].invalid){
+        <small>Escriba una descripción</small>
+        }
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-success">Modificar</button>
+  </form>
+</div>
+}
