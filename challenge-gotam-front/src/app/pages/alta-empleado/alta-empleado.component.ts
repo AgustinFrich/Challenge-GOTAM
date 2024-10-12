@@ -11,6 +11,7 @@ import { Area } from '../../classes/area';
 import { Empleado } from '../../classes/empleado';
 import { EmpleadoService } from '../../services/empleado.service';
 import Swal from 'sweetalert2';
+import { AreaService } from '../../services/area.service';
 
 @Component({
   selector: 'app-alta-empleado',
@@ -24,8 +25,14 @@ export class AltaEmpleadoComponent {
   formGroup: FormGroup;
   areaSeleccionada?: Area;
   empleadoService = inject(EmpleadoService);
+  areaService = inject(AreaService);
+  listadoAreas: Area[] = [];
 
   constructor() {
+    this.areaService.getAll().forEach((areas) => {
+      this.listadoAreas = areas;
+    });
+
     this.formGroup = this.fb.group({
       nombre: [
         '',

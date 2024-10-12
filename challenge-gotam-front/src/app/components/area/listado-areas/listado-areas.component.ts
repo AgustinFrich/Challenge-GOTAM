@@ -12,20 +12,11 @@ import Swal from 'sweetalert2';
 })
 export class ListadoAreasComponent {
   @Output() areaSeleccionada: EventEmitter<Area> = new EventEmitter();
+  @Output() recargarListado: EventEmitter<void> = new EventEmitter();
   @Input() puedeEliminar: boolean = false;
+  @Input() listadoAreas: Area[] = [];
 
   areaService = inject(AreaService);
-  listadoAreas: Area[] = [];
-
-  ngOnInit() {
-    this.traerAreas();
-  }
-
-  traerAreas() {
-    this.areaService.getAll().forEach((areas) => {
-      this.listadoAreas = areas;
-    });
-  }
 
   seleccionarArea(area: Area) {
     this.areaSeleccionada.emit(area);
@@ -40,9 +31,9 @@ export class ListadoAreasComponent {
       showConfirmButton: true,
     }).then((result) => {
       if (result.isConfirmed) {
-        const deleted = this.areaService.delete(area.id);
+        const deleted = this.areaService.delete(area.id!);
         deleted.forEach((value: any) => {
-          this.traerAreas();
+          this.recargarListado.emit();
         });
       }
     });

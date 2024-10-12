@@ -1,0 +1,27 @@
+<div class="ps-4 pe-4">
+  <div class="row">
+    <form class="form col-6" [formGroup]="formGroup" (ngSubmit)="darDeAlta()">
+      <h1>Alta de empleados</h1>
+      <div class="mb-3">
+        <label for="nombre-empleado" class="form-label"
+          >Nombres y apellido</label
+        >
+        <input
+          type="text"
+          id="nombre-empleado"
+          class="form-control"
+          name="nombre"
+          formControlName="nombre"
+        />
+        <div class="error">
+          @if(formGroup.controls["nombre"].touched &&
+          formGroup.controls["nombre"].invalid){
+          <small>Escriba sus nombres, solo letas, hasta 30 caractéres</small>
+          }
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success">Dar de alta</button>
+    </form>
+  </div>
+</div>
