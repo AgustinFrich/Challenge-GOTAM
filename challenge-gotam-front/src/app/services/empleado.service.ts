@@ -15,26 +15,26 @@ export class EmpleadoService {
 
   add(empleado: Empleado) {
     return this.http.post(
-      `${environment.API_URL}:${environment.API_PORT}/${this.endpoint}`,
+      `${environment.API_URL}${environment.API_PORT}/${this.endpoint}`,
       empleado
     );
   }
 
   getAll(): Observable<Empleado[]> {
     return this.http.get<Empleado[]>(
-      `${environment.API_URL}:${environment.API_PORT}/${this.endpoint}`
+      `${environment.API_URL}${environment.API_PORT}/${this.endpoint}`
     );
   }
 
   delete(id: number) {
     return this.http.delete(
-      `${environment.API_URL}:${environment.API_PORT}/${this.endpoint}/${id}`
+      `${environment.API_URL}${environment.API_PORT}/${this.endpoint}/${id}`
     );
   }
 
   update(empleado: Empleado) {
     return this.http.patch(
-      `${environment.API_URL}:${environment.API_PORT}/${this.endpoint}/${empleado.id}`,
+      `${environment.API_URL}${environment.API_PORT}/${this.endpoint}/${empleado.id}`,
       empleado
     );
   }

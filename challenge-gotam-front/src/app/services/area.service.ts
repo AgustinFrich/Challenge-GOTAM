@@ -15,26 +15,26 @@ export class AreaService {
 
   add(area: Area) {
     return this.http.post(
-      `${environment.API_URL}:${environment.API_PORT}/${this.endpoint}`,
+      `${environment.API_URL}${environment.API_PORT}/${this.endpoint}`,
       area
     );
   }
 
   getAll(): Observable<Area[]> {
     return this.http.get<Area[]>(
-      `${environment.API_URL}:${environment.API_PORT}/${this.endpoint}`
+      `${environment.API_URL}${environment.API_PORT}/${this.endpoint}`
     );
   }
 
   delete(id: number) {
     return this.http.delete(
-      `${environment.API_URL}:${environment.API_PORT}/${this.endpoint}/${id}`
+      `${environment.API_URL}${environment.API_PORT}/${this.endpoint}/${id}`
     );
   }
 
   update(area: Area) {
     return this.http.patch(
-      `${environment.API_URL}:${environment.API_PORT}/${this.endpoint}/${area.id}`,
+      `${environment.API_URL}${environment.API_PORT}/${this.endpoint}/${area.id}`,
       area
     );
   }
