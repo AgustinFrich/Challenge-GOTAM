@@ -3,7 +3,6 @@ import { AreaController } from './area.controller';
 import { AreaService } from './area.service';
 import { databaseProviders } from '../providers/db.providers';
 import { ConfigModule } from '@nestjs/config';
-import { Area } from './entities/area.entity';
 
 describe('AreaController', () => {
   let controller: AreaController;
@@ -25,7 +24,7 @@ describe('AreaController', () => {
   });
 
   describe('findAll', () => {
-    it('should return an array of cats', async () => {
+    it('should return an array of areas', async () => {
       const result: any = [];
       jest.spyOn(service, 'findAll').mockImplementation(() => result);
 

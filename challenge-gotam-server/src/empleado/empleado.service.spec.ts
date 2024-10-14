@@ -18,4 +18,13 @@ describe('EmpleadoService', () => {
   it('should be defined', () => {
     expect(service).toBeDefined();
   });
+
+  describe('findAll', () => {
+    it('should return an array of empleados', async () => {
+      const result: any = [];
+      jest.spyOn(service, 'findAll').mockImplementation(() => result);
+
+      expect(await service.findAll()).toBe(result);
+    });
+  });
 });
