@@ -29,6 +29,13 @@ Una vez termine de ejecutar el comando, la aplicación frontend estará ubicada 
 
 Por defecto, el puerto expuesto de la base de datos es el `3307`, para evitar conflictos con puertos existentes.
 
+## Elección de la DB y DER
+
+Elegí MySQL ya que al ser un proyecto de dos tablas y una relación simple, es más sencillo mantener de forma ordenada la relación entre empleados y áreas.
+
+![DER](https://github.com/user-attachments/assets/2f6d0fc9-a116-4b56-a401-129966165870)
+
+
 ## Paquetes utilizados
 
 - `angular` versión 17 para el desarrollo de la aplicación frontend.
